@@ -34,7 +34,6 @@ services:
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro,z
       - elasticsearch:/usr/share/elasticsearch/data:z
-      - ./apachelogs.log:/usr/share/logs/apachelogs.log
     ports:
       - "9200:9200"
       - "9300:9300"
@@ -58,6 +57,7 @@ services:
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro,Z
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro,Z
+      - ./apachelogs.log:/usr/share/logs/apachelogs.log      
     ports:
       - "5044:5044"
       - "5000:5000/tcp"
